@@ -5,7 +5,7 @@ use bd_sistema_info;
 create table usuario (
    id_usuario int primary key auto_increment,
    nome varchar(60) not null,
-   CPF char (11) not null unique,
+   CPF char(11) not null unique,
    email varchar(100) not null unique,
    senha varchar(50) not null unique,
    tipo_usuario enum('aluno','professor','funcionario','cliente') not null

@@ -16,6 +16,7 @@ insert into nota(idusuario_nota, id_trabalho, pontuacao)
 
 -- UPDATE
 update usuario set senha = "senac@777" where id_usuario = 1;
+update usuario set email = "pedrosp@yahoo.com.br" where id_usuario = 1;
 update nota set pontuacao = 7.0 where id_nota = 3;
 update nota set pontuacao = 7.9 where id_nota = 1;
  
@@ -42,16 +43,15 @@ show databases;
 
 
 -- ALTER TABLE
+alter table usuario add column idade int;
 alter table usuario add column altura float, add column peso float;
 alter table usuario drop column peso;
+alter table usuario add column datanascimento date;
+alter table usuario drop column altura;
 
 -- USE
 use bd_sistema_info;
 
 -- DROP
-SET foreign_key_checks = 0;
-/* Error Code: 3730. Cannot drop table ‘nota’ referenced by a foreign key constraint ‘fk_tn_nota’ on table ‘trabalho’” */
-/*ocorre porque a tabela nota está sendo referenciada por uma chave estrangeira na tabela trabalho. */
-/*Para resolver isso, vé preciso remover a restrição de chave estrangeira antes de tentar excluir a tabela.*/
 drop table nota;
 drop database bd_sistema_info;
